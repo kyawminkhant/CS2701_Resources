@@ -14,11 +14,16 @@
                        The css class of the menu is "navlist"
                        Check lecture slides about lists, an example of a more basic menu, and CSS class selector-->
             <ul class="navlist">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="help.html">Help</a></li>
             </ul>
          </nav>
         <main>
             <!-- Check Week 4 Lecture to learn about HTML5 semantic elements-->
             <aside>
+                <input type="text" id="Search" name="Search" value="Search">
             </aside>
             <section>
                 <form class="center" novalidate>
@@ -34,10 +39,23 @@
                         -->
                     <!-- Example given for user type checkboxes-->
                     
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name"><br>
+                    <label for="email">Email:</label><br>
+                    <input type="text" id="email" name="email"><br>
+                    <label for="password">Password:</label><br>
+                    <input type="text" id="password" name="password"><br>
+                    <label for="reTypepassword">Re-type password:</label><br>
+                    <input type="text" id="reTypepassword" name="reTypepassword"><br>
                     <input type="checkbox" id="buyer" name="buyer" value="buyer">
                     <label for="buyer">I want to buy produce directly from allotment owners.</label><br>
                     <input type="checkbox" id="seller" name="seller" value="seller">
                     <label for="seller">I want to sell produce from my allotment.</label><br><br>
+
+                    <input type="checkbox" id="TermCondition" name="TermCondition" value="TermCondition">
+                    <label for="TermCondition">I agree to the <a href="terms.html">Terms of Use</a> and <a href="privacy.html">Privacy Policy</a>.</label><br>
+                    <input type="button" id="register" name="register" value="Register">
+                    <label for="LearnMore"><a href="learnmore.html">Learn More</a></label>
 
                     <br><br>
                 </form>
