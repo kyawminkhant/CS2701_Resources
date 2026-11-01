@@ -1,26 +1,27 @@
-body{
+body {
     font-family: "Lato", sans-serif;
     max-width: 75rem;
     margin: auto;
-    height: 100vh;
+    min-height: 100vh;
+    line-height: 1.5; /* Improve readability without fixing the text size */
 }
 
-header{
-    background-image:url(SharingFood.jpg);
+header {
+    background-image: url(SharingFood.jpg);
     background-repeat: repeat;
     background-size: contain;
     background-position: center;
-    height:200px;
+    height: 200px;
     width: 100%;
     margin: auto;
 }
 
-/**** Menu Style *****************************************/
+/***** Menu Style *****/
 nav {
     border-bottom: 1px solid black;
 }
 
-ul.navlist{
+ul.navlist {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -28,8 +29,7 @@ ul.navlist{
     background-color: #333;
 }
 
-ul.navlist li
-{
+ul.navlist li {
     float: left;
     display: inline;
 }
@@ -46,8 +46,21 @@ ul.navlist li a:hover {
     background-color: #111;
 }
 
-/**** Styling for main part */
+/* Clearly identify links and form controls when navigating by keyboard. */
+a:focus-visible,
+input:focus-visible {
+    outline: 3px solid #14532d;
+    outline-offset: 2px;
+}
 
+/* Keep the navigation focus outline inside the dark navigation bar. */
+ul.navlist li a:focus-visible {
+    background-color: #111;
+    outline: 3px solid white;
+    outline-offset: -3px;
+}
+
+/***** Styling for main part *****/
 main {
     display: flex;
     flex-direction: row;
@@ -55,7 +68,7 @@ main {
     box-sizing: border-box;
     border-bottom: 0.5rem solid;
     width: 100%;
-    min-height: 100%;
+    min-height: 100vh;
     height: auto;
 }
 
@@ -72,42 +85,74 @@ aside {
 }
 
 section {
-    min-width: 350px;
+    min-width: 0; /* Avoid forcing horizontal scrolling on narrow screens. */
     width: 75%;
 }
 
-/*Styling for search in aside*/
-.search{
+/* Styling for search in aside */
+.search {
     display: block;
-    width: auto;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     text-align: left;
 }
 
 .center {
     margin: auto;
     width: 50%;
+    max-width: 40rem;
+    box-sizing: border-box;
     border: 3px solid green;
     padding: 10px;
-  }
+}
 
-/* Styling for text inputs in the form*/
+/* Styling for text inputs in the form */
 .textInput {
     display: block;
     width: auto;
     text-align: left;
 }
 
-/*Styling with a media query*/
+/* Prevent fields from overflowing their container when zoomed in. */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Provide a comfortably sized Register button and checkbox targets. */
+input[type="button"] {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    width: 1.5rem;
+    height: 1.5rem;
+    vertical-align: middle;
+}
+
+/* Styling with a media query */
 @media screen and (max-width: 700px) {
-    main{
+    main {
         flex-direction: column;
     }
-    
-    aside {
-        min-width: 100%;
+
+    aside,
+    section {
+        width: 100%;
+        min-width: 0;
     }
 
-    #hiddenSection{
+    .center {
+        width: 100%;
+    }
+
+    #hiddenSection {
         overflow-wrap: break-word;
     }
 }
